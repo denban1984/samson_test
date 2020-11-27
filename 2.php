@@ -24,4 +24,32 @@ function convertString($InputString, $SubString){
   }
 }
 
+
+function MyCompare($SortKey) {
+  //анонимная функция используется для сортировки массива в mySortForKey($InputArray, $SortKey)
+    return function ($FirstElement, $SecondElement) use ($SortKey) {
+         if ($FirstElement[$SortKey] == $SecondElement[$SortKey]) {
+           return 0;
+          }
+         return ($FirstElement[$SortKey] < $SecondElement[$SortKey]) ? -1 : 1;
+    };
+}
+
+
+function mySortForKey($InputArray, $SortKey){
+   
+   $indx=0;
+   
+   foreach($InputArray as $Chunk){
+     /*проверяю наличие ключа $SortKey во всех элементах массива. Вообще можно было бы проверять наличие ключа в анонимной функции MyCompare($SortKey) и избавиться от этого цикла если бы не требование указать индекс элемента входного массива в котором отсутвует нужный ключ */
+
+    if(!array_key_exists($SortKey, $Chunk)){ throw new InvalidArgumentException('Ошибка! Во входном массиве по индексу '.$indx.' отсутствует ключ '.$SortKey);} 
+    $indx++;
+    }
+
+    /*Сортировка функцией usort() с использованием собственной анонимной функции сравнения MyCompare($SortKey), анонимную функцию использовал для того чтобы можно было передавать любой ключ для сравнения а не жестко определенный внутри кода*/
+    usort($InputArray,MyCompare($SortKey));
+    return $InputArray;
+}
+
 ?>
