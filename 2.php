@@ -1,32 +1,32 @@
 <?php
 
 function convertString($InputString, $SubString){
-   /* ïî óñëîâèþ çàäàíèÿ èíâåðòèðóåòñÿ òîëüêî âòîðîå âõîæäåíèå ïîäñòðîêè
-    ò.å. ïåðâîå òðåòüå è îñòàëüíûå âõîæäåíèÿ (åñëè îíè åñòü) îòàþòñÿ íåèçìåííûìè. Òàêîå êîëè÷åñâòî äîïîëíèòåëüíûõ ïåðåìåííûõ ââåäåíî äëÿ íàãëÿäíîñòè. Ñàìîæå ðåøåíèå ìîæåò áûòü çàïèñàíî â îäíó ñòðîêó
-    íî îíà áóäåò òðóäíà äëÿ ïîíèìàíèÿ*/
+   /* Ð¿Ð¾ ÑƒÑÐ»Ð¾Ð²Ð¸ÑŽ Ð·Ð°Ð´Ð°Ð½Ð¸Ñ Ð¸Ð½Ð²ÐµÑ€Ñ‚Ð¸Ñ€ÑƒÐµÑ‚ÑÑ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð²Ñ‚Ð¾Ñ€Ð¾Ðµ Ð²Ñ…Ð¾Ð¶Ð´ÐµÐ½Ð¸Ðµ Ð¿Ð¾Ð´ÑÑ‚Ñ€Ð¾ÐºÐ¸
+    Ñ‚.Ðµ. Ð¿ÐµÑ€Ð²Ð¾Ðµ Ñ‚Ñ€ÐµÑ‚ÑŒÐµ Ð¸ Ð¾ÑÑ‚Ð°Ð»ÑŒÐ½Ñ‹Ðµ Ð²Ñ…Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ (ÐµÑÐ»Ð¸ Ð¾Ð½Ð¸ ÐµÑÑ‚ÑŒ) Ð¾Ñ‚Ð°ÑŽÑ‚ÑÑ Ð½ÐµÐ¸Ð·Ð¼ÐµÐ½Ð½Ñ‹Ð¼Ð¸. Ð¢Ð°ÐºÐ¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÐ²Ñ‚Ð¾ Ð´Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ñ… Ð¿ÐµÑ€ÐµÐ¼ÐµÐ½Ð½Ñ‹Ñ… Ð²Ð²ÐµÐ´ÐµÐ½Ð¾ Ð´Ð»Ñ Ð½Ð°Ð³Ð»ÑÐ´Ð½Ð¾ÑÑ‚Ð¸. Ð¡Ð°Ð¼Ð¾Ð¶Ðµ Ñ€ÐµÑˆÐµÐ½Ð¸Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð·Ð°Ð¿Ð¸ÑÐ°Ð½Ð¾ Ð² Ð¾Ð´Ð½Ñƒ ÑÑ‚Ñ€Ð¾ÐºÑƒ
+    Ð½Ð¾ Ð¾Ð½Ð° Ð±ÑƒÐ´ÐµÑ‚ Ñ‚Ñ€ÑƒÐ´Ð½Ð° Ð´Ð»Ñ Ð¿Ð¾Ð½Ð¸Ð¼Ð°Ð½Ð¸Ñ*/
 
  if(substr_count($InputString, $SubString)>1){
-   //åñëè âõîæäåíèé áîëüøå îäíîãî ïðåîáðàçóåì ñòðîêó
+  //ÐµÑÐ»Ð¸ Ð²Ñ…Ð¾Ð¶Ð´ÐµÐ½Ð¸Ð¹ Ð±Ð¾Ð»ÑŒÑˆÐµ Ð¾Ð´Ð½Ð¾Ð³Ð¾ Ð¿Ñ€ÐµÐ¾Ð±Ñ€Ð°Ð·ÑƒÐµÐ¼ ÑÑ‚Ñ€Ð¾ÐºÑƒ
 
-   $ReversSubString = strrev($SubString); // èíâåðòèðóåì ïîäñòðîêó
+   $ReversSubString = strrev($SubString); // Ð¸Ð½Ð²ÐµÑ€Ñ‚Ð¸Ñ€ÑƒÐµÐ¼ Ð¿Ð¾Ð´ÑÑ‚Ñ€Ð¾ÐºÑƒ
 
-   $SubStringLength = strlen($ReversSubString);// îïðåäåëÿåì äëèíó ïîäñòðîêè ïðèãîäèòñÿ â substr_replace()
+   $SubStringLength = strlen($ReversSubString);// Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÑÐµÐ¼ Ð´Ð»Ð¸Ð½Ñƒ Ð¿Ð¾Ð´ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð¿Ñ€Ð¸Ð³Ð¾Ð´Ð¸Ñ‚ÑÑ Ð² substr_replace()
 
-   $PositionFirstSubString = strpos($InputString,$SubString);// ïåðâîå âõîæäåíèå ïîäñòðîêè
+   $PositionFirstSubString = strpos($InputString,$SubString);// Ð¿ÐµÑ€Ð²Ð¾Ðµ Ð²Ñ…Ð¾Ð¶Ð´ÐµÐ½Ð¸Ðµ Ð¿Ð¾Ð´ÑÑ‚Ñ€Ð¾ÐºÐ¸
+   
+   $PositionSecondSubString = strpos($InputString,$SubString,$PositionFirstSubString+1);// Ð²Ñ‚Ð¾Ñ€Ð¾Ðµ Ð²Ñ…Ð¾Ð¶Ð´ÐµÐ½Ð¸Ðµ Ð¿Ð¾Ð´ÑÑ‚Ñ€Ð¾ÐºÐ¸
 
-   $PositionSecondSubString = strpos($InputString,$SubString,$PositionFirstSubString+1);// âòîðîå âõîæäåíèå ïîäñòðîêè
-
-   return substr_replace($InputString,$ReversSubString,$PositionSecondSubString,$SubStringLength);//çàìåíà ïîäñòðîêè ïî óñëîâèþ
+   return substr_replace($InputString,$ReversSubString,$PositionSecondSubString,$SubStringLength);//Ð·Ð°Ð¼ÐµÐ½Ð° Ð¿Ð¾Ð´ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð¿Ð¾ ÑƒÑÐ»Ð¾Ð²Ð¸ÑŽ
   }
  else{
-   //åñëè âõîæäåíåå îäíî èëè åãî íåò âîâñå ñòðîêà âîçâðàùàåòñÿ â íåèçìåííîì âèäå
+  //ÐµÑÐ»Ð¸ Ð²Ñ…Ð¾Ð¶Ð´ÐµÐ½ÐµÐµ Ð¾Ð´Ð½Ð¾ Ð¸Ð»Ð¸ ÐµÐ³Ð¾ Ð½ÐµÑ‚ Ð²Ð¾Ð²ÑÐµ ÑÑ‚Ñ€Ð¾ÐºÐ° Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ÑÑ Ð² Ð½ÐµÐ¸Ð·Ð¼ÐµÐ½Ð½Ð¾Ð¼ Ð²Ð¸Ð´Ðµ
     return $InputString;
   }
 }
 
 
 function MyCompare($SortKey) {
-  //àíîíèìíàÿ ôóíêöèÿ èñïîëüçóåòñÿ äëÿ ñîðòèðîâêè ìàññèâà â mySortForKey($InputArray, $SortKey)
+  //Ð°Ð½Ð¾Ð½Ð¸Ð¼Ð½Ð°Ñ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÑ‚ÑÑ Ð´Ð»Ñ ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ¸ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð² mySortForKey($InputArray, $SortKey)
     return function ($FirstElement, $SecondElement) use ($SortKey) {
          if ($FirstElement[$SortKey] == $SecondElement[$SortKey]) {
            return 0;
@@ -41,15 +41,124 @@ function mySortForKey($InputArray, $SortKey){
    $indx=0;
    
    foreach($InputArray as $Chunk){
-     /*ïðîâåðÿþ íàëè÷èå êëþ÷à $SortKey âî âñåõ ýëåìåíòàõ ìàññèâà. Âîîáùå ìîæíî áûëî áû ïðîâåðÿòü íàëè÷èå êëþ÷à â àíîíèìíîé ôóíêöèè MyCompare($SortKey) è èçáàâèòüñÿ îò ýòîãî öèêëà åñëè áû íå òðåáîâàíèå óêàçàòü èíäåêñ ýëåìåíòà âõîäíîãî ìàññèâà â êîòîðîì îòñóòâóåò íóæíûé êëþ÷ */
+     /*Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑÑŽ Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ðµ ÐºÐ»ÑŽÑ‡Ð° $SortKey Ð²Ð¾ Ð²ÑÐµÑ… ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°Ñ… Ð¼Ð°ÑÑÐ¸Ð²Ð°. Ð’Ð¾Ð¾Ð±Ñ‰Ðµ Ð¼Ð¾Ð¶Ð½Ð¾ Ð±Ñ‹Ð»Ð¾ Ð±Ñ‹ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑÑ‚ÑŒ Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ðµ ÐºÐ»ÑŽÑ‡Ð° Ð² Ð°Ð½Ð¾Ð½Ð¸Ð¼Ð½Ð¾Ð¹ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸ MyCompare($SortKey) Ð¸ Ð¸Ð·Ð±Ð°Ð²Ð¸Ñ‚ÑŒÑÑ Ð¾Ñ‚ ÑÑ‚Ð¾Ð³Ð¾ Ñ†Ð¸ÐºÐ»Ð° ÐµÑÐ»Ð¸ Ð±Ñ‹ Ð½Ðµ Ñ‚Ñ€ÐµÐ±Ð¾Ð²Ð°Ð½Ð¸Ðµ ÑƒÐºÐ°Ð·Ð°Ñ‚ÑŒ Ð¸Ð½Ð´ÐµÐºÑ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð²Ñ…Ð¾Ð´Ð½Ð¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð² ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð¼ Ð¾Ñ‚ÑÑƒÑ‚Ð²ÑƒÐµÑ‚ Ð½ÑƒÐ¶Ð½Ñ‹Ð¹ ÐºÐ»ÑŽÑ‡ */
 
-    if(!array_key_exists($SortKey, $Chunk)){ throw new InvalidArgumentException('Îøèáêà! Âî âõîäíîì ìàññèâå ïî èíäåêñó '.$indx.' îòñóòñòâóåò êëþ÷ '.$SortKey);} 
+    if(!array_key_exists($SortKey, $Chunk)){ throw new InvalidArgumentException('ÃŽÃ¸Ã¨Ã¡ÃªÃ ! Ã‚Ã® Ã¢ÃµÃ®Ã¤Ã­Ã®Ã¬ Ã¬Ã Ã±Ã±Ã¨Ã¢Ã¥ Ã¯Ã® Ã¨Ã­Ã¤Ã¥ÃªÃ±Ã³ '.$indx.' Ã®Ã²Ã±Ã³Ã²Ã±Ã²Ã¢Ã³Ã¥Ã² ÃªÃ«Ã¾Ã· '.$SortKey);} 
     $indx++;
     }
 
-    /*Ñîðòèðîâêà ôóíêöèåé usort() ñ èñïîëüçîâàíèåì ñîáñòâåííîé àíîíèìíîé ôóíêöèè ñðàâíåíèÿ MyCompare($SortKey), àíîíèìíóþ ôóíêöèþ èñïîëüçîâàë äëÿ òîãî ÷òîáû ìîæíî áûëî ïåðåäàâàòü ëþáîé êëþ÷ äëÿ ñðàâíåíèÿ à íå æåñòêî îïðåäåëåííûé âíóòðè êîäà*/
+    /*Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ° Ñ„ÑƒÐ½ÐºÑ†Ð¸ÐµÐ¹ usort() Ñ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸ÐµÐ¼ ÑÐ¾Ð±ÑÑ‚Ð²ÐµÐ½Ð½Ð¾Ð¹ Ð°Ð½Ð¾Ð½Ð¸Ð¼Ð½Ð¾Ð¹ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸ ÑÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ñ MyCompare($SortKey), Ð°Ð½Ð¾Ð½Ð¸Ð¼Ð½ÑƒÑŽ Ñ„ÑƒÐ½ÐºÑ†Ð¸ÑŽ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð» Ð´Ð»Ñ Ñ‚Ð¾Ð³Ð¾ Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¼Ð¾Ð¶Ð½Ð¾ Ð±Ñ‹Ð»Ð¾ Ð¿ÐµÑ€ÐµÐ´Ð°Ð²Ð°Ñ‚ÑŒ Ð»ÑŽÐ±Ð¾Ð¹ ÐºÐ»ÑŽÑ‡ Ð´Ð»Ñ ÑÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ñ Ð° Ð½Ðµ Ð¶ÐµÑÑ‚ÐºÐ¾ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÐµÐ½Ð½Ñ‹Ð¹ Ð²Ð½ÑƒÑ‚Ñ€Ð¸ ÐºÐ¾Ð´Ð°*/
     usort($InputArray,MyCompare($SortKey));
     return $InputArray;
 }
+
+
+define('HOST', 'localhost');   
+define('USER', 'samson');      
+define('PASSWORD', 'qwerty1'); 
+define('DATABASE', 'test_samson'); 
+
+
+function  importXml($XmlFile){
+ $ErrorArray = array();  
+ $ErrorArray[]=$XmlFile;
+ $connect = mysqli_connect(HOST, USER, PASSWORD, DATABASE); 
+    if (!$connect) {
+    echo "ÐžÑˆÐ¸Ð±ÐºÐ°: ÐÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ ÑÐ¾ÐµÐ´Ð¸Ð½ÐµÐ½Ð¸Ðµ Ñ MySQL." . PHP_EOL;
+    echo "ÐšÐ¾Ð´ Ð¾ÑˆÐ¸Ð±ÐºÐ¸ errno: " . mysqli_connect_errno() . PHP_EOL;
+    echo "Ð¢ÐµÐºÑÑ‚ Ð¾ÑˆÐ¸Ð±ÐºÐ¸ error: " . mysqli_connect_error() . PHP_EOL;
+    exit;
+    }else{
+
+ if(file_exists($XmlFile)){
+  try{
+    $xml = simplexml_load_file($XmlFile);
+  }catch(Exception $e){$ErrorArray[] = 'Line 22 ERROR open XML Document '.$XmlFile.' ERROR MSG: '. $e->getMessage();}
+ 
+ $ProductCode=0;
+ $ProductName='';
+ foreach( $xml->Ð¢Ð¾Ð²Ð°Ñ€ as $productset){
+  foreach($productset->attributes() as $key => $value) {//Ñ‚Ð¾Ð²Ð°Ñ€ Ð°Ñ‚Ñ€Ð¸Ð±ÑƒÑ‚Ñ‹
+    if(strcasecmp($key,"ÐšÐ¾Ð´")==0){$ProductCode=$value;}
+    if(strcasecmp($key,"ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ")==0){$ProductName=$value;}
+    if($ProductCode>0 && $ProductName!=''){
+      try{//Ð·Ð°Ð¿Ð¸ÑÑ‹Ð²Ð°ÐµÐ¼ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñƒ a_product
+      $sql = mysqli_prepare($connect, 'INSERT INTO a_product (PRODUCT_CODE, PRODUCT_NAME) VALUES(?,?) ON DUPLICATE KEY UPDATE PRODUCT_CODE=?, PRODUCT_NAME=?');    
+      mysqli_stmt_bind_param($sql , "isis", $ProductCode,$ProductName,$ProductCode,$ProductName);
+      mysqli_stmt_execute($sql);
+      mysqli_stmt_close($sql);
+      }catch(Exception $e){$ErrorArray[] = 'Line 36  ERROR MSG: '. $e->getMessage(); }
+      }
+ }
+  //Ð¡Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°ÐµÐ¼ Ñ†ÐµÐ½Ñ‹
+ foreach ($productset->Ð¦ÐµÐ½Ð° as $price) {
+ try{
+ $sql = mysqli_prepare($connect, 'SELECT ID FROM a_price_type WHERE PRICE_TYPE=?');
+    $PriceType=$price['Ð¢Ð¸Ð¿'];
+    $IdPriceType=-1;
+    mysqli_stmt_bind_param($sql , "s", $PriceType);
+    mysqli_stmt_execute($sql);
+    mysqli_stmt_bind_result($sql, $IdPriceType);
+    mysqli_stmt_fetch($sql);
+    mysqli_stmt_close($sql);
+  }catch(Exception $e){$ErrorArray[] = 'Line 50  ERROR MSG: '. $e->getMessage(); }
+
+    if($IdPriceType!=-1){
+      $priceval = (double)$price;
+      try{
+      $sql = mysqli_prepare($connect, 'INSERT INTO a_price (PRODUCT_CODE, PRICE_TYPE_ID, PRICE,LAST_MODIFY) VALUES(?,?,?,now())');    
+      mysqli_stmt_bind_param($sql , 'iid', $ProductCode, $IdPriceType, $priceval);
+      mysqli_stmt_execute($sql);
+      mysqli_stmt_close($sql);
+    }catch(Exception $e){$ErrorArray[] = 'Line 59  ERROR MSG: '. $e->getMessage(); }
+    }else{$ErrorArray[] = 'Line 60 IdPriceType==-1';}
+ }
+ 
+ //Ð¡Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°ÐµÐ¼ ÑÐ²Ð¾Ð¹ÑÑ‚Ð²Ð°
+ foreach ($productset->Ð¡Ð²Ð¾Ð¹ÑÑ‚Ð²Ð°->children() as $key => $value) {
+   if($key!='' && $value!=''){
+    try{
+      $sql = mysqli_prepare($connect, 'INSERT INTO a_property (PRODUCT_CODE, PRODUCT_PROPERTY, PROPERTY_VALUE) VALUES(?,?,?) ON DUPLICATE KEY UPDATE PRODUCT_CODE=?, PRODUCT_PROPERTY=?, PROPERTY_VALUE=?');    
+      mysqli_stmt_bind_param($sql , 'ississ', $ProductCode, $key, $value, $ProductCode, $key, $value);
+      mysqli_stmt_execute($sql);
+      mysqli_stmt_close($sql);
+    }catch(Exception $e){$ErrorArray[] = 'Line 71  ERROR MSG: '. $e->getMessage(); }
+   }
+ }
+
+ //Ð¡Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°ÐµÐ¼ Ñ€Ð°Ð·Ð´ÐµÐ»Ñ‹
+ foreach ($productset->Ð Ð°Ð·Ð´ÐµÐ»Ñ‹->children() as $key => $value) {
+ if($value!=''){
+  try{
+  $sql = mysqli_prepare($connect, 'SELECT CODE_RUBRIC FROM a_category WHERE NAME_RUBRIC=?');
+    $NameRubric=$value;
+    $CodeRubric=-1;
+    mysqli_stmt_bind_param($sql , "s", $NameRubric);
+    mysqli_stmt_execute($sql);
+    mysqli_stmt_bind_result($sql, $CodeRubric);
+    mysqli_stmt_fetch($sql);
+    mysqli_stmt_close($sql);
+     }catch(Exception $e){$ErrorArray[] = 'Line 87  ERROR MSG: '. $e->getMessage(); }
+    if($CodeRubric!=-1){
+      try{
+      $sql = mysqli_prepare($connect, 'INSERT INTO a_product_category (PRODUCT_CODE, CODE_RUBRIC) VALUES(?,?)');    
+      mysqli_stmt_bind_param($sql , 'ii', $ProductCode, $CodeRubric);
+      mysqli_stmt_execute($sql);
+      mysqli_stmt_close($sql);
+    }catch(Exception $e){$ErrorArray[] = 'Line 94  ERROR MSG: '. $e->getMessage(); }
+    }else{$ErrorArray[] = 'Line 60 CodeRubric==-1';}
+ }
+ }
+ $ProductCode=0;
+ $ProductName='';
+
+    }
+    mysqli_close($connect);
+ }else{$ErrorArray[] = 'Ð¤Ð°Ð¹Ð» '.$XmlFile.' Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½!';}
+ }
+ return $ErrorArray;
+ }
+
+
 
 ?>
