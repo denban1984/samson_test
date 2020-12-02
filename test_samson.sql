@@ -27,7 +27,7 @@ CREATE TABLE `a_category` (
   `NAME_RUBRIC` varchar(255) NOT NULL,
   PRIMARY KEY (`CODE_RUBRIC`),
   UNIQUE KEY `NAME_RUBRIC` (`NAME_RUBRIC`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +36,7 @@ CREATE TABLE `a_category` (
 
 LOCK TABLES `a_category` WRITE;
 /*!40000 ALTER TABLE `a_category` DISABLE KEYS */;
-INSERT INTO `a_category` VALUES (9,'ÐŸÑ€Ð¸Ð½Ñ‚ÐµÑ€Ñ‹'),(10,'ÐœÐ¤Ð£'),(7,'Ð‘ÑƒÐ¼Ð°Ð³Ð°');
+INSERT INTO `a_category` VALUES (11,'test_category_1'),(12,'test_category_2'),(13,'test_category_3'),(14,'test_category_4'),(15,'test_category_5'),(16,'test_category_6'),(9,'ÐŸÑ€Ð¸Ð½Ñ‚ÐµÑ€Ñ‹'),(10,'ÐœÐ¤Ð£'),(7,'Ð‘ÑƒÐ¼Ð°Ð³Ð°');
 /*!40000 ALTER TABLE `a_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,6 +63,7 @@ CREATE TABLE `a_category_chain` (
 
 LOCK TABLES `a_category_chain` WRITE;
 /*!40000 ALTER TABLE `a_category_chain` DISABLE KEYS */;
+INSERT INTO `a_category_chain` VALUES (11,12),(12,14),(12,15),(13,16),(11,13);
 /*!40000 ALTER TABLE `a_category_chain` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,7 +110,7 @@ CREATE TABLE `a_price_type` (
   `PRICE_TYPE` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `PRICE_TYPE` (`PRICE_TYPE`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -171,7 +172,7 @@ CREATE TABLE `a_product_category` (
 
 LOCK TABLES `a_product_category` WRITE;
 /*!40000 ALTER TABLE `a_product_category` DISABLE KEYS */;
-INSERT INTO `a_product_category` VALUES (201,7),(202,7),(302,9),(302,10),(305,9),(305,10);
+INSERT INTO `a_product_category` VALUES (201,7),(202,7),(302,9),(302,10),(305,9),(305,10),(201,12),(202,14),(202,15),(302,13),(305,16);
 /*!40000 ALTER TABLE `a_product_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -213,4 +214,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-02  1:41:37
+-- Dump completed on 2020-12-03  0:52:02
